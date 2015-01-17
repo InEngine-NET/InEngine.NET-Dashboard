@@ -1,0 +1,41 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-4">
+            <h2>Job Types</h2>
+            <ul class="list-group">
+                <li class="list-group-item" ng-repeat="jobType in jobTypes">
+                    {{ jobType }}
+                </li>
+            </ul>
+        </div>
+        <div class="col-md-4">
+            <h2>Cron Triggers</h2>
+            <div class="panel panel-default" ng-repeat="trigger in cronTriggers">
+                <div class="panel-heading">{{ trigger.id }}@{{ trigger.jobType }}</div>
+                <div class="panel-body">
+                    <strong>Cron Expression</strong>
+                    <div>{{ trigger.cronExpressionString }}</div>
+                    <strong>Last Time Fired</strong>
+                    <div>{{ trigger.lastTimeFired | amDateFormat }}</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <h2>Simple Triggers</h2>
+            <div class="panel panel-default" ng-repeat="trigger in simpleTriggers">
+                <div class="panel-heading">{{ trigger.id }}@{{ trigger.jobType }}</div>
+                <div class="panel-body">
+                    <strong>Start Time (UTC)</strong>
+                    <div>{{ trigger.startTimeUtc | amDateFormat }}</div>
+                    <strong>Interval</strong>
+                    <div>{{ trigger.repeatInterval }}</div>
+                    <strong>Repetitions</strong>
+                    <div>{{ trigger.repeatCount }}</div>
+                    <strong>Last Time Fired</strong>
+                    <div>{{ trigger.lastTimeFired | amDateFormat }}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -14,7 +14,9 @@
   ],
   "dependencies": {
     "angular": "~1.3.9",
-    "bootswatch": "~3.3.1+2",
-    "angular-resource": "~1.3.9"
+    "bootswatch": "~3.3.1",
+    "angular-resource": "~1.3.9",
+    "eeh-navigation": "~3.0.0",
+    "angular-moment": "~0.9.0"
   }
 }
