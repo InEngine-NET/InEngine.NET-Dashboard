@@ -2,17 +2,16 @@
 
 function inEngineConfig($stateProvider, $urlRouterProvider, eehNavigationProvider) {
     $urlRouterProvider.otherwise('/');
-
     $stateProvider
-        .state('inEngine', {
-            abstract: true,
-            templateUrl: 'app.html'
-        })
-        .state('inEngine.home', {
-            url: '/',
-            controller: 'HomeController',
-            templateUrl: 'home/home.html'
-        });
+    .state('inEngine', {
+        abstract: true,
+        templateUrl: 'app.html'
+    })
+    .state('inEngine.home', {
+        url: '/',
+        controller: 'HomeController',
+        templateUrl: 'home/home.html'
+    });
 
     eehNavigationProvider.searchIsVisible(false);
     eehNavigationProvider.sidebarTextCollapseIsCollapsed(true);
@@ -20,11 +19,11 @@ function inEngineConfig($stateProvider, $urlRouterProvider, eehNavigationProvide
     eehNavigationProvider.navbarBrand.state = 'inEngine.home';
 
     eehNavigationProvider
-        .sidebarMenuItem('home', {
-            text: 'Home',
-            iconClass: 'fa-home',
-            state: 'inEngine.home'
-        });
+    .sidebarMenuItem('home', {
+        text: 'Home',
+        iconClass: 'fa-home',
+        state: 'inEngine.home'
+    });
 }
 
 angular.module('inEngine', [

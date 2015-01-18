@@ -11,13 +11,13 @@ function homeController($scope, $resource) {
     $resource(apiUrl + '/SimpleTrigger').query()
     .$promise
     .then(function (data) {
-        $scope.cronTriggers = data;
+        $scope.simpleTriggers = data;
     });
 
     $resource(apiUrl + '/Job').query()
     .$promise
     .then(function (data) {
-        $scope.cronTriggers = data;
+        $scope.jobTypes = data;
     });
 }
 
