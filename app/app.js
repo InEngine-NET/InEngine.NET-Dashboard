@@ -26,6 +26,7 @@
         });
     }
 
+
     angular.module('inEngine', [
         'angularMoment',
         'eehNavigation',

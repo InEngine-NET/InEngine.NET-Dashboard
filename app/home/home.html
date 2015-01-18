@@ -13,6 +13,10 @@
             <div class="panel panel-default" ng-repeat="trigger in cronTriggers">
                 <div class="panel-heading">
                     {{ trigger.Id }}
+                    <span class="pull-right label"
+                          ng-class="{'label-success': trigger.StateId == 0,
+                                     'label-default': trigger.StateId == 1}">
+                        {{ trigger.StateDescription }}</span>
                 </div>
                 <div class="panel-body">
                     <strong>Job Type</strong>
@@ -22,7 +26,7 @@
                     <strong>Cron Description</strong>
                     <div>{{ trigger.CronExpressionDescription }}</div>
                     <strong>Time Zone</strong>
-                    <div>{{ trigger.TimeZone.StandardName }}</div>
+                    <div>{{ trigger.TimeZoneId }}</div>
                 </div>
             </div>
         </div>
@@ -32,6 +36,10 @@
             <div class="panel panel-default" ng-repeat="trigger in simpleTriggers">
                 <div class="panel-heading">
                     {{ trigger.Id }}
+                    <span class="pull-right label"
+                          ng-class="{'label-success': trigger.StateId == 0,
+                                     'label-info': trigger.StateId == 1}">
+                        {{ trigger.StateDescription }}</span>
                 </div>
                 <div class="panel-body">
                     <strong>Job Type</strong>
