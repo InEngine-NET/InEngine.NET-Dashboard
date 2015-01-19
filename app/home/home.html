@@ -26,7 +26,10 @@
                     <strong>Time Zone</strong>
                     <div>{{ trigger.TimeZoneId }}</div>
                     <hr>
-                    <button type="button" class="btn btn-default" ng-click="pauseCronTrigger(trigger)">Pause</button>
+                    <button type="button" class="btn btn-default" ng-click="pauseCronTrigger(trigger)">
+                        <span ng-if="trigger.StateId == 0">Pause</span>
+                        <span ng-if="trigger.StateId == 1">Resume</span>
+                    </button>
                 </div>
             </div>
         </div>
@@ -49,7 +52,10 @@
                     <strong>Repetitions</strong>
                     <div>{{ trigger.RepeatCount }}</div>
                     <hr>
-                    <button type="button" class="btn btn-default" ng-click="pauseSimpleTrigger(trigger)">Pause</button>
+                    <button type="button" class="btn btn-default" ng-click="pauseSimpleTrigger(trigger)">
+                        <span ng-if="trigger.StateId == 0">Pause</span>
+                        <span ng-if="trigger.StateId == 1">Resume</span>
+                    </button>
                 </div>
             </div>
         </div>
