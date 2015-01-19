@@ -12,19 +12,19 @@
             <h2>Cron Triggers</h2>
             <div class="panel panel-default" ng-repeat="trigger in cronTriggers">
                 <div class="panel-heading">
-                    {{ trigger.Id }}
                     <span class="label" ng-class="{'label-success': trigger.StateId == 0, 'label-info': trigger.StateId == 1}">{{ trigger.StateDescription }}</span>
+                    {{ trigger.CronExpressionDescription }}
                     <button type="button" class="close pull-right" data-dismiss="alert" ng-click="deleteCronTrigger(trigger)">×</button>
                 </div>
                 <div class="panel-body">
+                    <strong>Id</strong>
+                    <div>{{ trigger.Id }}</div>
                     <strong>Job Type</strong>
                     <div>{{ trigger.JobType }}</div>
                     <strong>Cron Expression</strong>
                     <div>{{ trigger.CronExpressionString }}</div>
-                    <strong>Cron Description</strong>
-                    <div>{{ trigger.CronExpressionDescription }}</div>
                     <strong>Time Zone</strong>
-                    <div>{{ trigger.TimeZoneId }}</div>
+                    <div>{{ trigger.TimeZoneInfo.DisplayName }}</div>
                     <hr>
                     <button type="button" class="btn btn-default" ng-click="pauseCronTrigger(trigger)">
                         <span ng-if="trigger.StateId == 0">Pause</span>
@@ -38,14 +38,16 @@
             <h2>Simple Triggers</h2>
             <div class="panel panel-default" ng-repeat="trigger in simpleTriggers">
                 <div class="panel-heading">
-                    {{ trigger.Id }}
                     <span class="label" ng-class="{'label-success': trigger.StateId == 0, 'label-info': trigger.StateId == 1}">{{ trigger.StateDescription }}</span>
+                    {{ trigger.StartTimeUtc | amDateFormat:'dddd, MMMM Do YYYY, h:mm:ss a' }}
                     <button type="button" class="close pull-right" data-dismiss="alert" ng-click="deleteSimpleTrigger(trigger)">×</button>
                 </div>
                 <div class="panel-body">
+                    <strong>Id</strong>
+                    <div>{{ trigger.Id }}</div>
                     <strong>Job Type</strong>
                     <div>{{ trigger.JobType }}</div>
-                    <strong>Start Time (UTC)</strong>
+                    <strong>Start Time UTC</strong>
                     <div>{{ trigger.StartTimeUtc }}</div>
                     <strong>Interval</strong>
                     <div>{{ trigger.RepeatInterval }}</div>
