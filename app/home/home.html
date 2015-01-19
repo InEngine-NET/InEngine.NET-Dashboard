@@ -13,10 +13,10 @@
             <div class="panel panel-default" ng-repeat="trigger in cronTriggers">
                 <div class="panel-heading">
                     {{ trigger.Id }}
-                    <span class="pull-right label"
+                    <span class="label"
                           ng-class="{'label-success': trigger.StateId == 0,
-                                     'label-default': trigger.StateId == 1}">
-                        {{ trigger.StateDescription }}</span>
+                                     'label-default': trigger.StateId == 1}">{{ trigger.StateDescription }}</span>
+                    <button type="button" class="close pull-right" data-dismiss="alert" ng-click="deleteCronTriggerById(trigger.Id)">×</button>
                 </div>
                 <div class="panel-body">
                     <strong>Job Type</strong>
@@ -27,6 +27,7 @@
                     <div>{{ trigger.CronExpressionDescription }}</div>
                     <strong>Time Zone</strong>
                     <div>{{ trigger.TimeZoneId }}</div>
+                    <button type="button" class="btn btn-default" ng-click="pauseCronTriggerById(trigger)">Pause</button>
                 </div>
             </div>
         </div>
@@ -36,16 +37,17 @@
             <div class="panel panel-default" ng-repeat="trigger in simpleTriggers">
                 <div class="panel-heading">
                     {{ trigger.Id }}
-                    <span class="pull-right label"
+                    <span class="label"
                           ng-class="{'label-success': trigger.StateId == 0,
                                      'label-info': trigger.StateId == 1}">
                         {{ trigger.StateDescription }}</span>
+                    <button type="button" class="close pull-right" data-dismiss="alert" ng-click="deleteSimpleTriggerById(trigger.Id)">×</button>
                 </div>
                 <div class="panel-body">
                     <strong>Job Type</strong>
                     <div>{{ trigger.JobType }}</div>
                     <strong>Start Time (UTC)</strong>
-                    <div>{{ trigger.StartTimeUtc | amDateFormat }}</div>
+                    <div>{{ trigger.StartTimeUtc }}</div>
                     <strong>Interval</strong>
                     <div>{{ trigger.RepeatInterval }}</div>
                     <strong>Repetitions</strong>
