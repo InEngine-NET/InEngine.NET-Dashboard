@@ -12,14 +12,14 @@
         eehInEngineApi.getCronTriggers().then(function (data) {
             data.forEach(function (item) {
                 var eventSource = angular.copy(eventSourceModel);
-                var schedule = later.parse.cron(item.CronExpressionString, false);
-                var dates = later.schedule(schedule).next(10, new Date(), moment().add(1, 'year').toDate())
+                var schedule = later.parse.cron(item.CronExpressionString, true);
+                var dates = later.schedule(schedule).next(10, new Date(), moment().add(1, 'year').toDate());
                 if (!angular.isArray(dates)) {
                     return;
                 }
                 eventSource.events = dates.map(function (cronEvent) {
                     return {
-                        title: item.CronExpressionString + ' : ' + item.JobType,
+                        title: item.CronExpressionString + ': ' + item.JobType,
                         start: cronEvent
                     }
                 });
