@@ -1,9 +1,7 @@
 # InEngine.NET Dashboard
 
-## Screen shots
-
-### Dashboard Home
+## Dashboard Home
 ![screenshot](/screenshots/home.png)
 
-### Calendar View
+## Calendar View
 ![screenshot](/screenshots/calendar.png)
