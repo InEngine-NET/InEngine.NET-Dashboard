@@ -11,6 +11,11 @@
             url: '/',
             controller: 'HomeController',
             templateUrl: 'home/home.html'
+        })
+        .state('inEngine.calendar', {
+            url: '/calendar',
+            controller: 'CalendarController',
+            templateUrl: 'calendar/calendar.html'
         });
 
         eehNavigationProvider.searchIsVisible(false);
@@ -23,6 +28,11 @@
             text: 'Home',
             iconClass: 'fa-home',
             state: 'inEngine.home'
+        })
+        .sidebarMenuItem('calendar', {
+            text: 'Calendar',
+            iconClass: 'fa-calendar',
+            state: 'inEngine.calendar'
         });
     }
 
@@ -33,6 +43,7 @@
         'eehInEngine.api',
         'ngResource',
         'ui.bootstrap',
+        'ui.calendar',
         'ui.router'
     ]).config(inEngineConfig);
 }(angular));
