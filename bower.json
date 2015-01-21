@@ -18,7 +18,7 @@
     "angular-resource": "~1.3.9",
     "bootswatch": "~3.3.1",
     "eeh-navigation": "~3.0.0",
-    "eeh-inengine-api": "~2.0.0-beta2",
+    "eeh-inengine-api": "~2.0.0-beta5",
     "angular-ui-calendar": "~0.8.1",
     "later": "*"
   }

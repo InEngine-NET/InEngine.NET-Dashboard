@@ -10,6 +10,5 @@
 }
 
 .health-status-list .success {
-    color: #4caf50;
     border-left-color: #4caf50;
 }
