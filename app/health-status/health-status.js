@@ -7,7 +7,6 @@
             scope: { healthStatus: '=healthStatus' },
             templateUrl: 'health-status/health-status.html',
             link: function (scope) {
-                console.log(scope.healthStatus);
                 scope.$watch('healthStatus', function (healthStatus) {
                     if (angular.isUndefined(healthStatus)) {
                         return;
