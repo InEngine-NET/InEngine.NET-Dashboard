@@ -36,6 +36,16 @@
         });
     }
 
+    function serverStatusDirective () {
+        return {
+            restrict: 'A',
+            scope: { serverStatus: '=serverStatus' },
+            link: function (scope, element) {
+                var statusClass = scope.serverStatus ? 'text-success' : 'text-danger';
+                element.addClass(statusClass);
+            }
+        }
+    }
 
     angular.module('inEngine', [
         'angularMoment',
@@ -45,5 +55,7 @@
         'ui.bootstrap',
         'ui.calendar',
         'ui.router'
-    ]).config(inEngineConfig);
+    ])
+    .config(inEngineConfig)
+    .directive('serverStatus', serverStatusDirective);
 }(angular));

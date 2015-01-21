@@ -10,6 +10,9 @@
         eehInEngineApi.getJobTypes().then(function (data) {
             $scope.jobTypes = data;
         });
+        eehInEngineApi.getHealthStatus().then(function (data) {
+            $scope.healthStatus = data;
+        });
 
         function removeItemById(collection, id) {
             angular.forEach(collection, function(item, index) {
