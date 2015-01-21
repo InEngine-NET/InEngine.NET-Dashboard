@@ -1,0 +1,15 @@
+.health-status-list li {
+    padding: 10px 20px 10px 20px;
+    background-color: #fbf9f7;
+    border-left: solid #000000 4px;
+}
+
+.health-status-list .danger {
+    color: #e51c23;
+    border-left-color: #e51c23;
+}
+
+.health-status-list .success {
+    color: #4caf50;
+    border-left-color: #4caf50;
+}

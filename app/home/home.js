@@ -53,9 +53,9 @@
 
         $scope.pauseSimpleTrigger = function (trigger) {
             eehInEngineApi.pauseSimpleTrigger(trigger)
-                .then(function (updatedTrigger) {
-                    replaceItemById($scope.simpleTriggers, updatedTrigger.Id, updatedTrigger)
-                });
+            .then(function (updatedTrigger) {
+                replaceItemById($scope.simpleTriggers, updatedTrigger.Id, updatedTrigger)
+            });
         };
     }
     angular.module('inEngine').controller('HomeController', homeController);

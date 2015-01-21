@@ -1,19 +1,6 @@
 <div class="container-fluid">
     <h3>Connection Status</h3>
-    <ul class="list-group">
-        <li class="list-group-item">
-            <span class="fa fa-fw fa-lg fa-circle" server-status="healthStatus.IsMailServerAvailable"></span>
-            Mail Server
-        </li>
-        <li class="list-group-item">
-            <span class="fa fa-fw fa-lg fa-circle" server-status="healthStatus.IsMessageQueueServerAvailable"></span>
-            Message Queue Server
-        </li>
-        <li class="list-group-item">
-            <span class="fa fa-fw fa-lg fa-circle" server-status="healthStatus.IsElasticsearchServerAvailable"></span>
-            Elasticsearch Server
-        </li>
-    </ul>
+    <div health-status="healthStatus"></div>
     <div class="row">
         <div class="col-md-4">
             <h2>Job Types</h2>

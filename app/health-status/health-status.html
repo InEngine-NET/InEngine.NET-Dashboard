@@ -1,0 +1,5 @@
+<ul class="list-unstyled health-status-list">
+    <li ng-repeat="server in servers" ng-class="server.isAvailable ? 'success' : 'danger'">
+        {{ server.name }}
+    </li>
+</ul>
