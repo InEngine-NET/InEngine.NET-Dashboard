@@ -5,8 +5,8 @@
         <div class="col-md-4">
             <h2>Job Types</h2>
             <ul class="list-group">
-                <li class="list-group-item" ng-repeat="jobType in jobTypes">
-                    {{ jobType }}
+                <li class="list-group-item" ng-repeat="jobType in jobTypes" title="{{ jobType.FullName }}">
+                    {{ jobType.Name }}
                 </li>
             </ul>
         </div>
