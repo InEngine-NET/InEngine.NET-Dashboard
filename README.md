@@ -1,5 +1,7 @@
 # InEngine.NET Dashboard
 
+[Documentation](http://inengine.net/dashboard.html)
+
 ## Dashboard Home
 ![screenshot](/screenshots/home.png)
 
