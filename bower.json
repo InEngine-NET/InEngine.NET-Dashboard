@@ -1,5 +1,5 @@
 {
-  "name": "InEngine.NET Dashboard",
+  "name": "InEngine.NET-Dashboard",
   "version": "0.0.0",
   "authors": [
     "Ethan Hann <ethanhann@gmail.com>"
@@ -21,5 +21,9 @@
     "eeh-inengine-api": "~2.0.0-beta5",
     "angular-ui-calendar": "~0.8.1",
     "later": "*"
+  },
+  "resolutions": {
+    "angular": "1.3.9",
+    "jquery": "~2.x"
   }
 }
