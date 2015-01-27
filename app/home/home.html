@@ -5,8 +5,8 @@
         <div class="col-md-4">
             <h2>Job Types</h2>
             <ul class="list-group">
-                <li class="list-group-item" ng-repeat="jobType in jobTypes" title="{{ jobType.FullName }}">
-                    {{ jobType.Name }}
+                <li class="list-group-item" ng-repeat="jobType in jobTypes" title="{{ jobType.fullName }}">
+                    {{ jobType.name }}
                 </li>
             </ul>
         </div>
@@ -14,23 +14,23 @@
             <h2>Cron Triggers</h2>
             <div class="panel panel-default" ng-repeat="trigger in cronTriggers">
                 <div class="panel-heading">
-                    <span class="label" ng-class="{'label-success': trigger.StateId == 0, 'label-info': trigger.StateId == 1}">{{ trigger.StateDescription }}</span>
-                    {{ trigger.CronExpressionDescription }}
+                    <span class="label" ng-class="{'label-success': trigger.stateId == 0, 'label-info': trigger.stateId == 1}">{{ trigger.stateDescription }}</span>
+                    {{ trigger.cronExpressionDescription }}
                     <button type="button" class="close pull-right" data-dismiss="alert" ng-click="deleteCronTrigger(trigger)">×</button>
                 </div>
                 <div class="panel-body">
                     <strong>Id</strong>
-                    <div>{{ trigger.Id }}</div>
+                    <div>{{ trigger.id }}</div>
                     <strong>Job Type</strong>
-                    <div>{{ trigger.JobType }}</div>
+                    <div>{{ trigger.jobType }}</div>
                     <strong>Cron Expression</strong>
-                    <div>{{ trigger.CronExpressionString }}</div>
+                    <div>{{ trigger.cronExpressionString }}</div>
                     <strong>Time Zone</strong>
-                    <div>{{ trigger.TimeZoneInfo.DisplayName }}</div>
+                    <div>{{ trigger.timeZoneId }}</div>
                     <hr>
                     <button type="button" class="btn btn-default" ng-click="pauseCronTrigger(trigger)">
-                        <span ng-if="trigger.StateId == 0">Pause</span>
-                        <span ng-if="trigger.StateId == 1">Resume</span>
+                        <span ng-if="trigger.stateId == 0">Pause</span>
+                        <span ng-if="trigger.stateId == 1">Resume</span>
                     </button>
                 </div>
             </div>
@@ -40,25 +40,25 @@
             <h2>Simple Triggers</h2>
             <div class="panel panel-default" ng-repeat="trigger in simpleTriggers">
                 <div class="panel-heading">
-                    <span class="label" ng-class="{'label-success': trigger.StateId == 0, 'label-info': trigger.StateId == 1}">{{ trigger.StateDescription }}</span>
-                    {{ trigger.StartTimeUtc | amDateFormat:'dddd, MMMM Do YYYY, h:mm:ss a' }}
+                    <span class="label" ng-class="{'label-success': trigger.stateId == 0, 'label-info': trigger.stateId == 1}">{{ trigger.stateDescription }}</span>
+                    {{ trigger.startTimeUtc | amDateFormat:'dddd, MMMM Do YYYY, h:mm:ss a' }}
                     <button type="button" class="close pull-right" data-dismiss="alert" ng-click="deleteSimpleTrigger(trigger)">×</button>
                 </div>
                 <div class="panel-body">
                     <strong>Id</strong>
-                    <div>{{ trigger.Id }}</div>
+                    <div>{{ trigger.id }}</div>
                     <strong>Job Type</strong>
-                    <div>{{ trigger.JobType }}</div>
+                    <div>{{ trigger.jobType }}</div>
                     <strong>Start Time UTC</strong>
-                    <div>{{ trigger.StartTimeUtc }}</div>
+                    <div>{{ trigger.startTimeUtc }}</div>
                     <strong>Interval</strong>
-                    <div>{{ trigger.RepeatInterval }}</div>
+                    <div>{{ trigger.repeatInterval }}</div>
                     <strong>Repetitions</strong>
-                    <div>{{ trigger.RepeatCount }}</div>
+                    <div>{{ trigger.repeatCount }}</div>
                     <hr>
                     <button type="button" class="btn btn-default" ng-click="pauseSimpleTrigger(trigger)">
-                        <span ng-if="trigger.StateId == 0">Pause</span>
-                        <span ng-if="trigger.StateId == 1">Resume</span>
+                        <span ng-if="trigger.stateId == 0">Pause</span>
+                        <span ng-if="trigger.stateId == 1">Resume</span>
                     </button>
                 </div>
             </div>

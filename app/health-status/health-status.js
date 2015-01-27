@@ -14,18 +14,17 @@
                     scope.servers = [
                         {
                             name: 'Mail Server',
-                            isAvailable: healthStatus.IsMailServerAvailable
+                            isAvailable: healthStatus.isMailServerAvailable
                         },
                         {
                             name: 'Message Queue Server',
-                            isAvailable: healthStatus.IsMessageQueueServerAvailable
+                            isAvailable: healthStatus.isMessageQueueServerAvailable
                         },
                         {
                             name: 'Elasticsearch Server',
-                            isAvailable: healthStatus.IsElasticsearchServerAvailable
+                            isAvailable: healthStatus.isElasticsearchServerAvailable
                         }
                     ];
-
                 });
             }
         }
